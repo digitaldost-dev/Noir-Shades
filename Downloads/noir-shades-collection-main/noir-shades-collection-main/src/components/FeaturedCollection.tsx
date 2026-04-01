@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import { ShoppingBag } from "lucide-react";
-import { useCart } from "@/context/CartContext";
-import { useToast } from "@/hooks/use-toast";
 import productAviator from "@/assets/product-aviator.jpg";
 import productRound from "@/assets/product-round.jpg";
 import productCateye from "@/assets/product-cateye.jpg";
@@ -9,51 +6,32 @@ import productWayfarer from "@/assets/product-wayfarer.jpg";
 
 const products = [
   {
-    id: "monarch",
     name: "The Monarch",
     type: "Aviator",
     price: "₹4,999",
-    priceNum: 4999,
     image: productAviator,
   },
   {
-    id: "visionary",
     name: "The Visionary",
     type: "Round Frame",
     price: "₹3,999",
-    priceNum: 3999,
     image: productRound,
   },
   {
-    id: "enigma",
     name: "The Enigma",
     type: "Cat-Eye",
     price: "₹5,499",
-    priceNum: 5499,
     image: productCateye,
   },
   {
-    id: "classic",
     name: "The Classic",
     type: "Wayfarer",
     price: "₹3,499",
-    priceNum: 3499,
     image: productWayfarer,
   },
 ];
 
 const FeaturedCollection = () => {
-  const { addItem } = useCart();
-  const { toast } = useToast();
-
-  const handleAdd = (product: typeof products[0]) => {
-    addItem(product);
-    toast({
-      title: "Added to Cart",
-      description: `${product.name} has been added to your cart.`,
-    });
-  };
-
   return (
     <section id="collections" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
@@ -83,7 +61,7 @@ const FeaturedCollection = () => {
               className="group"
             >
               <div className="relative overflow-hidden bg-card border border-border hover-gold-glow transition-all duration-500">
-                <div className="aspect-[4/5] overflow-hidden relative">
+                <div className="aspect-[4/5] overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -92,14 +70,6 @@ const FeaturedCollection = () => {
                     height={1000}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  {/* Add to cart overlay */}
-                  <button
-                    onClick={() => handleAdd(product)}
-                    className="absolute bottom-0 left-0 right-0 bg-primary/90 text-primary-foreground font-body text-xs tracking-widest uppercase py-3 flex items-center justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                  >
-                    <ShoppingBag size={14} />
-                    Add to Cart
-                  </button>
                 </div>
                 <div className="p-5">
                   <p className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-1">
