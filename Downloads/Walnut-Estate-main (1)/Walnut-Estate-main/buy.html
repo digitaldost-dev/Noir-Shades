@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walnut Estate — Buy Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-circle.png" type="image/png">
+<link rel="shortcut icon" href="favicon-circle.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="main-logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Buy-page specific hero override */
+.hero-bg-buy {
+  background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=85') !important;
+}
+
+/* Segment cards redesign */
+.segments-section {
+  padding: 100px 56px;
+  background: var(--walnut);
+  position: relative; overflow: hidden;
+}
+.segments-section::before {
+  content: 'EXPLORE';
+  position: absolute; bottom: -20px; right: -10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 160px; font-weight: 600;
+  color: rgba(238,220,194,0.03); letter-spacing: 16px;
+  pointer-events: none; white-space: nowrap;
+}
+.segments-section .section-header { margin-bottom: 56px; max-width: 1248px; margin-left: auto; margin-right: auto; }
+.segments-grid-new {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1248px; margin: 0 auto;
+}
+.seg-card {
+  position: relative; border-radius: 22px; overflow: hidden;
+  height: 400px; cursor: none;
+  box-shadow: 0 16px 48px rgba(30,20,16,0.3);
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+}
+.seg-card:hover { transform: scale(1.03); }
+.seg-card:hover .seg-bg { transform: scale(1.09); }
+.seg-card:hover .seg-info { transform: translateY(0); }
+.seg-bg {
+  width: 100%; height: 100%; background-size: cover; background-position: center;
+  transition: transform .7s cubic-bezier(.25,.46,.45,.94);
+}
+.seg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(20,12,10,.95) 0%, rgba(20,12,10,.4) 50%, rgba(20,12,10,.1) 100%);
+}
+.seg-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 24px;
+  transform: translateY(4px); transition: transform .4s;
+}
+.seg-icon-line {
+  width: 32px; height: 2px; background: var(--cream-dk);
+  border-radius: 2px; margin-bottom: 14px; opacity: .7;
+}
+.seg-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: white;
+  margin-bottom: 8px; line-height: 1.1;
+}
+.seg-count {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cream-dk); opacity: .75; margin-bottom: 16px;
+}
+.seg-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cream-dk); text-decoration: none;
+  border-bottom: 1px solid rgba(238,220,194,0.4); padding-bottom: 3px;
+  transition: color .3s, gap .3s;
+}
+.seg-cta:hover { color: white; gap: 12px; }
+
+.seg-bg-land { background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80'); }
+.seg-bg-house { background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80'); }
+.seg-bg-flat { background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80'); }
+.seg-bg-villa { background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80'); }
+.seg-bg-pent { background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'); }
+
+@media (max-width: 1024px) {
+  .segments-grid-new { grid-template-columns: repeat(3, 1fr); }
+  .seg-card { height: 320px; }
+  .segments-section { padding: 72px 24px; }
+}
+@media (max-width: 680px) {
+  .segments-grid-new { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="sticky-contact">
+  <a href="https://wa.me/+917234000088/" target="_blank" class="sticky-btn sticky-btn-whatsapp" aria-label="Chat on WhatsApp">
+    <svg fill="#25D366" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1-.48.6-.59.73-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92 5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23 2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2 8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07 1.93 1.93 0 0 0 1.26-.88 1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z"></path><path d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85 3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13-2.34.61.62-2.28-.14-.23a6.18 6.18 0 0 1 9.6-7.65 6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z"></path></svg>
+  </a>
+  <a href="tel:+917234000088" class="sticky-btn sticky-btn-call" aria-label="Call Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </a>
+  <a href="mailto:info@walnutestate.com" class="sticky-btn sticky-btn-email" aria-label="Email Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+  </a>
+</div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"><img src="main-logo.png" alt="Walnut Estate Logo" /></div>
+    <div class="logo-text">
+      <span class="logo-text-main">Walnut Estate</span>
+      <span class="logo-text-sub">The evolution of the estate</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg hero-bg-buy"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-deco-ring"></div>
+  <div class="hero-deco-ring-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Buy with Walnut Estate</div>
+    <h1 class="hero-headline">Find your next<br><em>legacy home</em></h1>
+    <p class="hero-tagline">Browse curated residences, guided viewings, and premium purchase support for discerning buyers.</p>
+  </div>
+  <div class="scroll-cue"><div class="scroll-cue-line"></div><div class="scroll-cue-text">Scroll</div></div>
+</section>
+
+<!-- BUYER SERVICES -->
+<section class="buy-sell-page">
+  <div class="buy-sell-inner">
+    <div class="buy-sell-copy reveal">
+      <div class="section-eyebrow">Buyer Services</div>
+      <h2 class="section-heading">A curated buying experience for ambitious homeowners.</h2>
+      <p class="section-copy">Access handpicked luxury properties, private previews, and expert market guidance.</p>
+      <div class="buy-sell-actions">
+        <a href="tel:+917234000088" class="btn btn-primary">Request a Call</a>
+        <a href="#" class="btn btn-outline">View Buyer Guide</a>
+      </div>
+    </div>
+    <div class="buy-sell-grid reveal d2">
+      <article class="buy-card">
+        <div class="card-label">Featured</div>
+        <h3>Signature residences</h3>
+        <p>Discover exceptional homes that combine design, location, and value.</p>
+        <ul class="card-features">
+          <li>Curated premium listings</li>
+          <li>Private viewing experiences</li>
+          <li>Fast decision support</li>
+        </ul>
+        <a href="#featured-properties" class="card-link">See featured homes</a>
+      </article>
+      <article class="buy-card">
+        <div class="card-label">Advisor</div>
+        <h3>Personal guidance</h3>
+        <p>Navigate the market with dedicated advisors and a tailored purchase plan.</p>
+        <ul class="card-features">
+          <li>Market intelligence</li>
+          <li>Negotiation support</li>
+          <li>Closing coordination</li>
+        </ul>
+        <a href="tel:+917234000088" class="card-link">Meet our team</a>
+      </article>
+      <!-- <article class="buy-card">
+        <div class="card-label">Portfolio</div>
+        <h3>Investment selection</h3>
+        <p>Choose from high-potential properties curated for growth and lifestyle.</p>
+        <ul class="card-features">
+          <li>Investment-ready homes</li>
+          <li>Luxury community access</li>
+          <li>Long-term value planning</li>
+        </ul>
+        <a href="tel:+917234000088" class="card-link">Explore opportunities</a>
+      </article> -->
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTIES -->
+<section class="properties-section" id="featured-properties">
+  <div class="section-header reveal">
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cream-dk);opacity:.7;margin-bottom:16px;font-weight:600;">
+        <span style="width:28px;height:1.5px;background:var(--cream-dk);opacity:.5;border-radius:2px;display:block;"></span>
+        Featured Properties
+      </div>
+      <h2 class="section-heading-light">Handpicked <em>Selections</em></h2>
+    </div>
+    <a href="tel:+917234000088" class="view-all">Enquire About Any →</a>
+  </div>
+  <div class="properties-grid reveal">
+    <div class="prop-card tall">
+      <div class="prop-bg i-p1"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Featured</div>
+        <div class="prop-name">The Arcadia Penthouse</div>
+        <div class="prop-loc">📍 Gomti Nagar, Lucknow</div>
+        <div class="prop-price">₹ 8.4 Crore</div>
+        <div class="prop-meta"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 4,200 sqft</span></div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p2"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">New</div><div class="prop-name">Villa Serenova</div><div class="prop-loc">📍 Indira Nagar, Lucknow</div><div class="prop-price">₹ 4.2 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p3"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">Exclusive</div><div class="prop-name">Meridian Heights</div><div class="prop-loc">📍 Aliganj, Lucknow</div><div class="prop-price">₹ 6.1 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p4"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-name">The Courtyard</div><div class="prop-loc">📍 Koyal Vihar, Lucknow</div><div class="prop-price">₹ 3.8 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p5"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">Golf View</div><div class="prop-name">Greens Pavilion</div><div class="prop-loc">📍 Alambagh, Lucknow</div><div class="prop-price">₹ 5.5 Crore</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTY SEGMENTS -->
+<section class="segments-section">
+  <div class="section-header reveal">
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cream-dk);opacity:.7;margin-bottom:16px;font-weight:600;">
+        <span style="width:28px;height:1.5px;background:var(--cream-dk);opacity:.5;border-radius:2px;display:block;"></span>
+        Property Types
+      </div>
+      <h2 class="section-heading-light">Browse by <em>Category</em></h2>
+    </div>
+    <a href="tel:+917234000088" class="view-all">Find Your Type →</a>
+  </div>
+  <div class="segments-grid-new reveal">
+    <div class="seg-card">
+      <div class="seg-bg seg-bg-land"></div>
+      <div class="seg-overlay"></div>
+      <div class="seg-info">
+        <div class="seg-icon-line"></div>
+        <div class="seg-title">Land</div>
+        <div class="seg-count">38 Plots Available</div>
+        <a href="tel:+917234000088" class="seg-cta">Explore <span>→</span></a>
+      </div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-bg seg-bg-house"></div>
+      <div class="seg-overlay"></div>
+      <div class="seg-info">
+        <div class="seg-icon-line"></div>
+        <div class="seg-title">House</div>
+        <div class="seg-count">64 Properties</div>
+        <a href="tel:+917234000088" class="seg-cta">Explore <span>→</span></a>
+      </div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-bg seg-bg-flat"></div>
+      <div class="seg-overlay"></div>
+      <div class="seg-info">
+        <div class="seg-icon-line"></div>
+        <div class="seg-title">Flat</div>
+        <div class="seg-count">112 Apartments</div>
+        <a href="tel:+917234000088" class="seg-cta">Explore <span>→</span></a>
+      </div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-bg seg-bg-villa"></div>
+      <div class="seg-overlay"></div>
+      <div class="seg-info">
+        <div class="seg-icon-line"></div>
+        <div class="seg-title">Villa</div>
+        <div class="seg-count">29 Villas</div>
+        <a href="tel:+917234000088" class="seg-cta">Explore <span>→</span></a>
+      </div>
+    </div>
+    <div class="seg-card">
+      <div class="seg-bg seg-bg-pent"></div>
+      <div class="seg-overlay"></div>
+      <div class="seg-info">
+        <div class="seg-icon-line"></div>
+        <div class="seg-title">Penthouse</div>
+        <div class="seg-count">17 Penthouses</div>
+        <a href="tel:+917234000088" class="seg-cta">Explore <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="cta-eyebrow">Ready to Buy?</div>
+    <h2 class="cta-heading">Let's Find Your<br><em>Perfect Home</em></h2>
+    <p class="cta-sub">Our advisors are ready to guide you through every step — from shortlisting to keys in hand.</p>
+    <div class="cta-btns">
+      <a href="tel:7234000088" class="btn btn-primary">Call 72340 00088</a>
+      <a href="https://wa.me/+917234000088/" class="btn btn-outline-light" target="_blank">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="main-logo.png" alt="Walnut Estate" class="footer-logo-img" />
+        <div class="footer-logo">Walnut Estate</div>
+      </div>
+      <p class="footer-tagline">The evolution of the estate</p>
+      <div class="footer-contact">
+        <a href="tel:7234000088"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>72340 00088</a>
+        <a href="mailto:info@walnutestate.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>info@walnutestate.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Browse</div>
+      <ul class="footer-links">
+        <li><a href="#">Land &amp; Plots</a></li>
+        <li><a href="#">Independent Houses</a></li>
+        <li><a href="#">Apartments &amp; Flats</a></li>
+        <li><a href="#">Luxury Villas</a></li>
+        <li><a href="#">Penthouses</a></li>
+        <li><a href="#">New Launches</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Property Curation</a></li>
+        <li><a href="#">Investment Advisory</a></li>
+        <li><a href="#">Interior Concierge</a></li>
+        <li><a href="#">Private Sales</a></li>
+        <li><a href="#">NRI Services</a></li>
+        <li><a href="#">Legal Assistance</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Walnut Estate. All Rights Reserved. RERA Reg. No. UP/RERA/2019/12345</div>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Settings</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

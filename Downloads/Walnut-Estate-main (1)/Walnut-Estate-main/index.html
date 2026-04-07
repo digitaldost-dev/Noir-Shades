@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walnut Estate — The evolution of the estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-circle.png" type="image/png">
+<link rel="shortcut icon" href="favicon-circle.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="main-logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="sticky-contact">
+  <a href="https://wa.me/+917234000088/" target="_blank" class="sticky-btn sticky-btn-whatsapp" aria-label="Chat on WhatsApp">
+    <svg fill="#25D366" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1-.48.6-.59.73-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92 5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23 2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2 8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07 1.93 1.93 0 0 0 1.26-.88 1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z"></path><path d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85 3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13-2.34.61.62-2.28-.14-.23a6.18 6.18 0 0 1 9.6-7.65 6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z"></path></svg>
+  </a>
+  <a href="tel:+917234000088" class="sticky-btn sticky-btn-call" aria-label="Call Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </a>
+  <a href="mailto:info@walnutestate.com" class="sticky-btn sticky-btn-email" aria-label="Email Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+  </a>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <img src="main-logo.png" alt="Walnut Estate Logo" />
+    </div>
+    <div class="logo-text">
+      <span class="logo-text-main">Walnut Estate</span>
+      <span class="logo-text-sub">The evolution of the estate</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-deco-ring"></div>
+  <div class="hero-deco-ring-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Lucknow's Finest Residences</div>
+    <h1 class="hero-headline">Where <em>Craft</em><br>Meets <em>Home</em></h1>
+    <p class="hero-tagline">Curating extraordinary living spaces for discerning individuals across Lucknow.</p>
+    <div class="hero-search">
+      <div class="hero-search-tabs">
+        <button class="search-tab active" onclick="setTab(this)">Buy</button>
+        <button class="search-tab" onclick="setTab(this)">Commercial</button>
+        <button class="search-tab" onclick="setTab(this)">New Projects</button>
+      </div>
+      <div class="hero-search-row">
+        <div class="search-input-wrap">
+          <div class="search-input-label">Location</div>
+          <input class="search-input-field" type="text" placeholder="Lucknow, Gomti Nagar, Indira Nagar…">
+        </div>
+        <div class="search-input-wrap">
+          <div class="search-input-label">Property Type</div>
+          <select class="search-input-field">
+            <option value="">Any Type</option>
+            <option>Villa</option>
+            <option>Penthouse</option>
+            <option>Apartment</option>
+            <option>Plot</option>
+            <option>Farmhouse</option>
+          </select>
+        </div>
+        <div class="search-input-wrap">
+          <div class="search-input-label">Budget</div>
+          <select class="search-input-field">
+            <option value="">Any Budget</option>
+            <option>₹ 1Cr – 3Cr</option>
+            <option>₹ 3Cr – 7Cr</option>
+            <option>₹ 7Cr – 15Cr</option>
+            <option>₹ 15Cr+</option>
+          </select>
+        </div>
+        <button class="hero-search-btn">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats-strip">
+    <div class="hero-stat" style="--d:0s"><div class="hero-stat-num">20<sup>+</sup></div><div class="hero-stat-label">Years of Trust</div></div>
+    <div class="hero-stat" style="--d:.1s"><div class="hero-stat-num">840</div><div class="hero-stat-label">Homes Delivered</div></div>
+    <div class="hero-stat" style="--d:.2s"><div class="hero-stat-num">₹2.1K</div><div class="hero-stat-label">Crore in Deals</div></div>
+    <div class="hero-stat" style="--d:.3s"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Client Satisfaction</div></div>
+  </div>
+  <div class="scroll-cue"><div class="scroll-cue-line"></div><div class="scroll-cue-text">Scroll</div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-item">Luxury Villas</div>
+    <div class="marquee-item">Penthouse Living</div>
+    <div class="marquee-item">Golf Course Residences</div>
+    <div class="marquee-item">Bespoke Interiors</div>
+    <div class="marquee-item">Investment Advisory</div>
+    <div class="marquee-item">Private Estates</div>
+    <div class="marquee-item">Smart Homes</div>
+    <div class="marquee-item">Waterfront Properties</div>
+    <div class="marquee-item">Luxury Villas</div>
+    <div class="marquee-item">Penthouse Living</div>
+    <div class="marquee-item">Golf Course Residences</div>
+    <div class="marquee-item">Bespoke Interiors</div>
+    <div class="marquee-item">Investment Advisory</div>
+    <div class="marquee-item">Private Estates</div>
+    <div class="marquee-item">Smart Homes</div>
+    <div class="marquee-item">Waterfront Properties</div>
+  </div>
+</div>
+
+<!-- BUY / SELL CALLOUT -->
+<section class="buysell-callout">
+  <div class="buysell-callout-inner">
+    <div class="callout-panel callout-panel-buy reveal">
+      <div class="callout-bg"></div>
+      <div class="callout-overlay"></div>
+      <div class="callout-content">
+        <div class="callout-tag">For Buyers</div>
+        <h2 class="callout-title">Find your next<br><em>legacy home</em></h2>
+        <p class="callout-desc">Browse curated residences, private viewings, and expert guidance — designed for those who know exactly what they want.</p>
+        <a href="buy.html" class="callout-cta">Explore Properties <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="callout-panel callout-panel-sell reveal d2">
+      <div class="callout-bg"></div>
+      <div class="callout-overlay"></div>
+      <div class="callout-content">
+        <div class="callout-tag">For Sellers</div>
+        <h2 class="callout-title">List with<br><em>confidence</em></h2>
+        <p class="callout-desc">Premium exposure, strategic pricing, and white-glove support from first call to closing day.</p>
+        <a href="sell.html" class="callout-cta">Sell Your Property <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / ABOUT -->
+<section style="background:var(--parchment)">
+  <div class="intro">
+    <div class="reveal">
+      <div class="section-eyebrow">Our Philosophy</div>
+      <h2 class="section-heading">Beyond Property —<br>We Find You a<br><em>Home for the Soul</em></h2>
+      <p class="intro-body">At Walnut Estate, we believe the finest address is not merely an asset — it is an experience. Every detail, from morning light through a well-placed window to the quiet hum of a perfectly engineered space, shapes the life you inhabit.<br><br>With expertise curating Lucknow's most coveted residences, we bring an editorial lens to real estate — one that sees beyond square footage into the soul of a space.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
+        <a href="#" class="btn btn-primary">Discover Our Approach</a>
+        <a href="tel:7234000088" class="text-link">72340 00088</a>
+      </div>
+    </div>
+    <div class="intro-img-grid reveal d2">
+      <div class="intro-img i-intro1" style="border-radius:20px;"></div>
+      <div class="intro-img i-intro2 offset" style="border-radius:20px;"></div>
+      <div class="intro-img i-intro3 span2" style="border-radius:20px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE COLLECTION -->
+<section class="properties-section">
+  <div class="section-header reveal">
+    <div>
+      <div style="display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cream-dk);opacity:.7;margin-bottom:16px;font-weight:600;">
+        <span style="width:28px;height:1.5px;background:var(--cream-dk);opacity:.5;border-radius:2px;display:block;"></span>
+        Curated Selection
+      </div>
+      <h2 class="section-heading-light">The <em>Collection</em></h2>
+    </div>
+    <a href="buy.html" class="view-all">View All Properties →</a>
+  </div>
+  <div class="properties-grid reveal">
+    <div class="prop-card tall">
+      <div class="prop-bg i-p1"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Featured</div>
+        <div class="prop-name">The Arcadia Penthouse</div>
+        <div class="prop-loc">📍 Gomti Nagar, Lucknow</div>
+        <div class="prop-price">₹ 8.4 Crore</div>
+        <div class="prop-meta"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 4,200 sqft</span></div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p2"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">New</div><div class="prop-name">Villa Serenova</div><div class="prop-loc">📍 Indira Nagar, Lucknow</div><div class="prop-price">₹ 4.2 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p3"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">Exclusive</div><div class="prop-name">Meridian Heights</div><div class="prop-loc">📍 Aliganj, Lucknow</div><div class="prop-price">₹ 6.1 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p4"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-name">The Courtyard</div><div class="prop-loc">📍 Koyal Vihar, Lucknow</div><div class="prop-price">₹ 3.8 Crore</div></div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-bg i-p5"></div>
+      <div class="prop-overlay"></div>
+      <div class="prop-info"><div class="prop-tag">Golf View</div><div class="prop-name">Greens Pavilion</div><div class="prop-loc">📍 Alambagh, Lucknow</div><div class="prop-price">₹ 5.5 Crore</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTY -->
+<section class="featured">
+  <div class="featured-img">
+    <div class="featured-badge">Property of the Month</div>
+  </div>
+  <div class="featured-content reveal">
+    <div class="section-eyebrow">Featured Estate</div>
+    <h2 class="featured-title">Palazzo<br><em>Aurelia</em></h2>
+    <div class="featured-loc">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Gomti Nagar Peninsula, Lucknow · Uttar Pradesh
+    </div>
+    <div class="featured-specs">
+      <div><div class="spec-val">5</div><div class="spec-key">Bedrooms</div></div>
+      <div><div class="spec-val">6,400</div><div class="spec-key">Sq. Ft.</div></div>
+      <div><div class="spec-val">5</div><div class="spec-key">Bathrooms</div></div>
+      <div><div class="spec-val">3</div><div class="spec-key">Car Parking</div></div>
+    </div>
+    <div class="featured-price">₹ 14.5 Crore<small>Price negotiable — contact us</small></div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="tel:7234000088" class="btn btn-primary">Schedule Viewing</a>
+      <a href="#" class="btn btn-outline">Virtual Tour</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES COMPACT CAROUSEL -->
+<section class="services-compact">
+  <div class="services-compact-inner">
+    <div class="services-compact-header reveal">
+      <div>
+        <div class="services-eyebrow">What We Do</div>
+        <h2 class="section-heading">Services for the <em>Discerning</em></h2>
+      </div>
+      <div class="services-controls">
+        <button class="svc-nav-btn" onclick="svcScroll(-1)" aria-label="Previous">&#8592;</button>
+        <div class="svc-dots" id="svcDots"></div>
+        <button class="svc-nav-btn" onclick="svcScroll(1)" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+    <div class="services-track-wrap reveal d2">
+      <div class="services-track" id="svcTrack">
+        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Property Curation</div><p class="svc-desc">Hand-selected homes vetted through our 60-point excellence framework before they reach you.</p></div>
+        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Investment Advisory</div><p class="svc-desc">Data-backed insights to identify high-yield opportunities and build a resilient property portfolio.</p></div>
+        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Interior Concierge</div><p class="svc-desc">From furniture sourcing to turnkey design — your new residence, perfectly tailored to you.</p></div>
+        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Private Sales</div><p class="svc-desc">Off-market listings transacted discreetly, with full confidentiality and white-glove handling.</p></div>
+        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Legal &amp; Due Diligence</div><p class="svc-desc">Title searches, documentation, and regulatory compliance — secured from first call to final signature.</p></div>
+        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">NRI Property Services</div><p class="svc-desc">Full-spectrum support for Non-Resident Indians — search, manage, repatriate, FEMA-compliant.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEIGHBOURHOOD -->
+<section class="neighbourhood">
+  <div class="neighbourhood-inner">
+    <div class="neighbourhood-header">
+      <div class="reveal">
+        <div class="section-eyebrow">Explore Areas</div>
+        <h2 class="section-heading">Prime <em>Neighbourhoods</em><br>We Serve</h2>
+      </div>
+      <p class="nbr-body reveal d2">From the upscale localities of Gomti Nagar to the vibrant neighbourhoods of Indira Nagar — we know every pocket of Lucknow intimately, offering unparalleled local expertise in the markets that matter most.</p>
+    </div>
+    <div class="nbr-grid">
+      <div class="nbr-card reveal"><div class="nbr-bg i-n1"></div><div class="nbr-overlay"></div><div class="nbr-info"><div class="nbr-name">Gomti Nagar</div><div class="nbr-count">142 Properties</div></div></div>
+      <div class="nbr-card reveal d1"><div class="nbr-bg i-n2"></div><div class="nbr-overlay"></div><div class="nbr-info"><div class="nbr-name">Indira Nagar</div><div class="nbr-count">98 Properties</div></div></div>
+      <div class="nbr-card reveal d2"><div class="nbr-bg i-n3"></div><div class="nbr-overlay"></div><div class="nbr-info"><div class="nbr-name">Aliganj</div><div class="nbr-count">76 Properties</div></div></div>
+      <div class="nbr-card reveal d3"><div class="nbr-bg i-n4"></div><div class="nbr-overlay"></div><div class="nbr-info"><div class="nbr-name">Koyal Vihar</div><div class="nbr-count">54 Properties</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="journal">
+  <div class="journal-inner">
+    <div class="journal-header reveal">
+      <div><div class="section-eyebrow">The Journal</div><h2 class="section-heading">Thoughts on Living <em>Well</em></h2></div>
+      <a href="#" class="text-link">All Articles →</a>
+    </div>
+    <div class="journal-grid">
+      <div class="article-card featured-art reveal">
+        <div class="art-img"><div class="art-img-inner i-a1"></div></div>
+        <div class="art-tag">Architecture</div>
+        <h3 class="art-title">Luxury Living in Gomti Nagar: How Post-Pandemic Living Redefined the Modern Home</h3>
+        <p class="art-excerpt">A deep look at how four years have transformed what luxury means in the Indian capital — from the height of ceilings to the depth of silence available.</p>
+        <div class="art-meta">March 2026 <span>·</span> 8 min read</div>
+      </div>
+      <div class="article-card reveal d1">
+        <div class="art-img"><div class="art-img-inner i-a2"></div></div>
+        <div class="art-tag">Investment</div>
+        <h3 class="art-title">Kanpur Road: The Corridor That Rewrote Lucknow's Property Map</h3>
+        <p class="art-excerpt">Why savvy investors are shifting focus westward and what infrastructure corridors mean for capital appreciation.</p>
+        <div class="art-meta">Feb 2026 <span>·</span> 6 min read</div>
+      </div>
+      <div class="article-card reveal d2">
+        <div class="art-img"><div class="art-img-inner i-a3"></div></div>
+        <div class="art-tag">Design</div>
+        <h3 class="art-title">Japandi in Lucknow: How Wabi-Sabi Found a Home in Modern Interiors</h3>
+        <p class="art-excerpt">The minimalist aesthetic dominating luxury interiors and what it says about affluent urban Indian living in 2026.</p>
+        <div class="art-meta">Jan 2026 <span>·</span> 5 min read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testi-inner">
+    <div class="testi-eyebrow">Client Stories</div>
+    <div class="testi-slider">
+      <div class="testi-slide active">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Walnut Estate didn't just sell us a home — they understood us. They knew before we did that we needed a garden-facing study and a kitchen that caught the evening light. Palazzo Aurelia is not just where we live; it's who we are."</p>
+        <div class="testi-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80')"></div>
+        <div class="testi-name">Priya Malhotra</div>
+        <div class="testi-role">Author · Lucknow</div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"As an NRI investing from Singapore, I needed a team I could trust completely. Walnut Estate handled every detail — legal, interior, even the building committee introduction. Flawless from start to finish."</p>
+        <div class="testi-avatar" style="background-image:url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80')"></div>
+        <div class="testi-name">Arjun Mehta</div>
+        <div class="testi-role">Finance Director · Singapore</div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Three investments through Walnut Estate, each one outperforming projections. Their market intelligence is genuinely unparalleled in Lucknow — they operate at a category all their own."</p>
+        <div class="testi-avatar" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80')"></div>
+        <div class="testi-name">Shreya Kapoor</div>
+        <div class="testi-role">Entrepreneur · Lucknow</div>
+      </div>
+    </div>
+    <div class="testi-nav">
+      <button class="testi-dot active" onclick="setSlide(0)"></button>
+      <button class="testi-dot" onclick="setSlide(1)"></button>
+      <button class="testi-dot" onclick="setSlide(2)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="cta-eyebrow">Begin Your Journey</div>
+    <h2 class="cta-heading">Your <em>Extraordinary</em><br>Home Awaits</h2>
+    <p class="cta-sub">Speak with a Walnut Estate advisor today — no obligation, just a conversation about what home means to you.</p>
+    <div class="cta-btns">
+      <a href="tel:7234000088" class="btn btn-primary">Call 72340 00088</a>
+      <a href="https://wa.me/+917234000088/" class="btn btn-outline-light" target="_blank">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="main-logo.png" alt="Walnut Estate" class="footer-logo-img" />
+        <div class="footer-logo">Walnut Estate</div>
+      </div>
+      <p class="footer-tagline">The evolution of the estate</p>
+      <div class="footer-contact">
+        <a href="tel:7234000088"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>72340 00088</a>
+        <a href="mailto:info@walnutestate.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>info@walnutestate.com</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/walnutestate/" target="_blank" class="social-btn" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/walnutestate" target="_blank" class="social-btn" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://x.com/WalnutEstate" target="_blank" class="social-btn" title="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.linkedin.com/company/walnut-estate/" target="_blank" class="social-btn" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Properties</div>
+      <ul class="footer-links">
+        <li><a href="#">Luxury Villas</a></li>
+        <li><a href="#">Penthouses</a></li>
+        <li><a href="#">Golf Residences</a></li>
+        <li><a href="#">Farmhouses</a></li>
+        <li><a href="#">Investment Plots</a></li>
+        <li><a href="#">New Launches</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Property Curation</a></li>
+        <li><a href="#">Investment Advisory</a></li>
+        <li><a href="#">Interior Concierge</a></li>
+        <li><a href="#">Private Sales</a></li>
+        <li><a href="#">NRI Services</a></li>
+        <li><a href="#">Legal Assistance</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Press &amp; Media</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Walnut Estate. All Rights Reserved. RERA Reg. No. UP/RERA/2019/12345</div>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Settings</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Services compact carousel
+(function() {
+  const track = document.getElementById('svcTrack');
+  const dotsEl = document.getElementById('svcDots');
+  if (!track) return;
+  const cardW = 276;
+  const total = track.querySelectorAll('.svc-card').length;
+  const numDots = total;
+  for (let i = 0; i < numDots; i++) {
+    const d = document.createElement('button');
+    d.className = 'svc-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => { track.scrollTo({ left: i * cardW, behavior: 'smooth' }); });
+    if (dotsEl) dotsEl.appendChild(d);
+  }
+  track.addEventListener('scroll', () => {
+    const idx = Math.round(track.scrollLeft / cardW);
+    document.querySelectorAll('.svc-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  });
+})();
+
+function svcScroll(dir) {
+  const t = document.getElementById('svcTrack');
+  if (t) t.scrollBy({ left: dir * 552, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walnut Estate — Sell Your Property</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon-circle.png" type="image/png">
+<link rel="shortcut icon" href="favicon-circle.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="main-logo.png">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Sell hero */
+.hero-bg-sell {
+  background-image: url('https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1600&q=85') !important;
+}
+
+/* ── SELL STATS ── */
+.sell-stats {
+  background: var(--walnut);
+  padding: 72px 56px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+}
+.sell-stat {
+  text-align: center; padding: 28px 20px;
+  border-right: 1px solid rgba(238,220,194,0.12);
+  position: relative;
+}
+.sell-stat:last-child { border-right: none; }
+.sell-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px; font-weight: 300; color: var(--cream); line-height: 1;
+}
+.sell-stat-num sup { font-size: 22px; }
+.sell-stat-label {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(238,220,194,.45); margin-top: 10px;
+}
+
+/* ── WHY WALNUT (sell page intro split) ── */
+.sell-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.sell-why-img {
+  position: relative; overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85');
+  background-size: cover; background-position: center;
+}
+.sell-why-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(75,46,46,.15) 0%, transparent 60%);
+}
+.sell-why-content {
+  background: var(--cream-lt); padding: 90px 72px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.sell-why-content h2 { margin-bottom: 20px; }
+.sell-why-content p { font-size: 15px; font-weight: 300; line-height: 1.95; color: var(--muted); margin-bottom: 40px; }
+.sell-why-points { list-style: none; margin-bottom: 40px; }
+.sell-why-points li {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 0; border-bottom: 1px solid rgba(75,46,46,0.08);
+  font-size: 14px; color: var(--ink); font-weight: 400; line-height: 1.5;
+}
+.sell-why-points li:first-child { border-top: 1px solid rgba(75,46,46,0.08); }
+.sell-why-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--walnut);
+  line-height: 1; flex-shrink: 0; min-width: 32px;
+}
+
+/* ── PROCESS STEPS ── */
+.sell-process {
+  padding: 100px 56px;
+  background: var(--parchment);
+}
+.sell-process-inner { max-width: 1248px; margin: 0 auto; }
+.process-header { text-align: center; margin-bottom: 72px; }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 38px; left: calc(12.5% + 10px); right: calc(12.5% + 10px);
+  height: 1px; background: rgba(75,46,46,0.15);
+}
+.process-step { padding: 0 28px; text-align: center; position: relative; }
+.process-num-wrap {
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--walnut); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300;
+  box-shadow: 0 8px 24px rgba(75,46,46,0.25);
+}
+.process-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 10px;
+}
+.process-desc { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--muted); }
+
+/* ── TESTIMONIALS (sell specific) ── */
+.sell-testi {
+  background: white; padding: 80px 56px;
+}
+.sell-testi-inner { max-width: 1248px; margin: 0 auto; }
+.sell-testi-header { margin-bottom: 56px; }
+.sell-testi-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;
+}
+.sell-review-card {
+  background: var(--parchment); border-radius: 24px; padding: 36px 32px;
+  border-left: 4px solid var(--walnut); position: relative;
+}
+.sell-review-stars { color: var(--walnut); font-size: 14px; letter-spacing: 4px; margin-bottom: 18px; }
+.sell-review-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 300; font-style: italic;
+  color: var(--ink); line-height: 1.75; margin-bottom: 24px;
+}
+.sell-review-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+.sell-review-role { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+
+/* ── CONTACT FORM ── */
+.sell-form-section {
+  background: var(--walnut);
+  padding: 80px 56px;
+  position: relative; overflow: hidden;
+}
+.sell-form-section::before {
+  content: 'SELL';
+  position: absolute; bottom: -30px; right: -10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 200px; font-weight: 600;
+  color: rgba(238,220,194,0.04); pointer-events: none; white-space: nowrap;
+}
+.sell-form-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start;
+}
+.sell-form-left h2 { color: var(--cream-lt); margin-bottom: 18px; }
+.sell-form-left p { font-size: 15px; font-weight: 300; color: rgba(238,220,194,.6); line-height: 1.8; margin-bottom: 40px; }
+.sell-form-contact-list { list-style: none; }
+.sell-form-contact-list li {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 14px; color: rgba(238,220,194,.65);
+  padding: 14px 0; border-bottom: 1px solid rgba(238,220,194,.1);
+}
+.sell-form-contact-list li:first-child { border-top: 1px solid rgba(238,220,194,.1); }
+.sell-form-contact-list a { color: inherit; text-decoration: none; transition: color .3s; }
+.sell-form-contact-list a:hover { color: var(--cream-lt); }
+.contact-icon {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(238,220,194,.1); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 16px; height: 16px; stroke: var(--cream-dk); fill: none; }
+
+/* Form styles */
+.sell-form {
+  background: rgba(255,250,244,0.97);
+  border-radius: 28px; padding: 48px 44px;
+  box-shadow: 0 32px 80px rgba(30,20,16,0.3);
+}
+.form-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 400; color: var(--ink);
+  margin-bottom: 6px;
+}
+.form-subhead {
+  font-size: 13px; color: var(--muted); margin-bottom: 32px; line-height: 1.6;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 16px; }
+.form-label {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px; font-weight: 600;
+}
+.form-input, .form-select, .form-textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px; color: var(--ink);
+  background: var(--cream-lt); border: 1.5px solid transparent;
+  border-radius: 14px; padding: 14px 18px; outline: none;
+  transition: border-color .25s, background .25s; width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--walnut); background: white;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--warm-mid); }
+.form-select { appearance: none; cursor: pointer; }
+.form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+.form-submit {
+  width: 100%; padding: 16px;
+  background: var(--walnut); color: var(--cream);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  border: none; border-radius: 50px; cursor: pointer;
+  transition: background .3s, transform .2s;
+  box-shadow: 0 8px 24px rgba(75,46,46,0.3); margin-top: 8px;
+}
+.form-submit:hover { background: var(--walnut-dk); transform: translateY(-2px); }
+.form-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.6; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sell-stats { grid-template-columns: 1fr 1fr; }
+  .sell-why { grid-template-columns: 1fr; }
+  .sell-why-img { height: 380px; }
+  .sell-why-content { padding: 56px 32px; }
+  .sell-process { padding: 72px 24px; }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-grid::before { display: none; }
+  .sell-testi-grid { grid-template-columns: 1fr; }
+  .sell-form-section { padding: 72px 24px; }
+  .sell-form-inner { grid-template-columns: 1fr; gap: 48px; }
+  .form-row { grid-template-columns: 1fr; }
+  .sell-form { padding: 36px 28px; }
+  .sell-testi { padding: 72px 24px; }
+}
+@media (max-width: 680px) {
+  .sell-stats { grid-template-columns: 1fr 1fr; padding: 48px 24px; }
+  .process-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="sticky-contact">
+  <a href="https://wa.me/+917234000088/" target="_blank" class="sticky-btn sticky-btn-whatsapp" aria-label="Chat on WhatsApp">
+    <svg fill="#25D366" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1-.48.6-.59.73-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92 5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23 2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2 8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07 1.93 1.93 0 0 0 1.26-.88 1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z"></path><path d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85 3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13-2.34.61.62-2.28-.14-.23a6.18 6.18 0 0 1 9.6-7.65 6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z"></path></svg>
+  </a>
+  <a href="tel:+917234000088" class="sticky-btn sticky-btn-call" aria-label="Call Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </a>
+  <a href="mailto:info@walnutestate.com" class="sticky-btn sticky-btn-email" aria-label="Email Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+  </a>
+</div>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"><img src="main-logo.png" alt="Walnut Estate Logo" /></div>
+    <div class="logo-text">
+      <span class="logo-text-main">Walnut Estate</span>
+      <span class="logo-text-sub">The evolution of the estate</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#sell-form" class="nav-cta">List Property</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg hero-bg-sell"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-deco-ring"></div>
+  <div class="hero-deco-ring-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Sell with Walnut Estate</div>
+    <h1 class="hero-headline">Your property<br>deserves<br><em>the best</em></h1>
+    <p class="hero-tagline">Premium marketing, strategic pricing, and a seamless seller journey — from listing to closing.</p>
+    <div style="margin-top: 36px;">
+      <a href="#sell-form" class="btn btn-primary" style="font-size:13px;padding:16px 40px;">List Your Property</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="scroll-cue-line"></div><div class="scroll-cue-text">Scroll</div></div>
+</section>
+
+<!-- SELL STATS -->
+<div class="sell-stats reveal">
+  <div class="sell-stat">
+    <div class="sell-stat-num">₹2.1K<sup>Cr</sup></div>
+    <div class="sell-stat-label">Total Sales Volume</div>
+  </div>
+  <div class="sell-stat">
+    <div class="sell-stat-num">840<sup>+</sup></div>
+    <div class="sell-stat-label">Successful Closings</div>
+  </div>
+  <div class="sell-stat">
+    <div class="sell-stat-num">98%</div>
+    <div class="sell-stat-label">Seller Satisfaction</div>
+  </div>
+  <div class="sell-stat">
+    <div class="sell-stat-num">28</div>
+    <div class="sell-stat-label">Avg. Days to Sell</div>
+  </div>
+</div>
+
+<!-- WHY WALNUT -->
+<section class="sell-why">
+  <div class="sell-why-img"></div>
+  <div class="sell-why-content">
+    <div class="section-eyebrow">Why Walnut Estate</div>
+    <h2 class="section-heading">We don't just list —<br>we <em>elevate</em> your property.</h2>
+    <p>Our approach to selling is built on precision, presentation, and performance. Every listing receives the same editorial care we'd give a Vogue cover — because first impressions are everything.</p>
+    <ul class="sell-why-points">
+      <li><span class="sell-why-num">01</span><span>Luxury campaign design with professional photography, cinematic video, and digital staging</span></li>
+      <li><span class="sell-why-num">02</span><span>Access to our private buyer network — qualified, pre-vetted, high-intent purchasers</span></li>
+      <li><span class="sell-why-num">03</span><span>Data-driven pricing strategy that maximises value without leaving money on the table</span></li>
+      <li><span class="sell-why-num">04</span><span>End-to-end legal and documentation support — from title to registration</span></li>
+    </ul>
+    <a href="#sell-form" class="btn btn-primary">Get Your Free Valuation</a>
+  </div>
+</section>
+
+<!-- SELLER SERVICES -->
+<section class="buy-sell-page" style="background:var(--parchment);">
+  <div class="buy-sell-inner">
+    <div class="buy-sell-copy reveal">
+      <div class="section-eyebrow">Seller Services</div>
+      <h2 class="section-heading">A premium experience built for top-tier properties.</h2>
+      <p class="section-copy">Partner with Walnut Estate for curated marketing, expert negotiation, and polished presentation that delivers results.</p>
+      <div class="buy-sell-actions">
+        <a href="#sell-form" class="btn btn-primary">List Your Property</a>
+        <a href="tel:+917234000088" class="btn btn-outline">Seller Strategy Call</a>
+      </div>
+    </div>
+    <div class="buy-sell-grid reveal d2">
+      <article class="buy-card">
+        <div class="card-label">Market</div>
+        <h3>Premium Exposure</h3>
+        <p>Reach an affluent audience with elevated digital and private marketing campaigns.</p>
+        <ul class="card-features">
+          <li>Luxury campaign design</li>
+          <li>Private buyer outreach</li>
+          <li>Selective presentations</li>
+        </ul>
+        <a href="#sell-form" class="card-link">Get Started</a>
+      </article>
+      <article class="buy-card">
+        <div class="card-label">Value</div>
+        <h3>Strategic Pricing</h3>
+        <p>Maximise return with intelligent price positioning backed by live market data.</p>
+        <ul class="card-features">
+          <li>Market benchmarking</li>
+          <li>Value-led messaging</li>
+          <li>Offer management</li>
+        </ul>
+        <a href="#sell-form" class="card-link">Value Your Home</a>
+      </article>
+      <!-- <article class="buy-card">
+        <div class="card-label">Closing</div>
+        <h3>White-Glove Support</h3>
+        <p>From staging to contracts, we manage your entire seller journey with impeccable care.</p>
+        <ul class="card-features">
+          <li>Staging &amp; presentation</li>
+          <li>Offer negotiation</li>
+          <li>Closing coordination</li>
+        </ul>
+        <a href="tel:+917234000088" class="card-link">Call Our Team</a>
+      </article> -->
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sell-process">
+  <div class="sell-process-inner">
+    <div class="process-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;">Our Process</div>
+      <h2 class="section-heading" style="text-align:center;">How We Sell Your <em>Property</em></h2>
+    </div>
+    <div class="process-grid reveal d1">
+      <div class="process-step">
+        <div class="process-num-wrap">01</div>
+        <div class="process-title">Valuation</div>
+        <p class="process-desc">We assess your property with a comprehensive market analysis and provide a data-backed pricing strategy.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num-wrap">02</div>
+        <div class="process-title">Presentation</div>
+        <p class="process-desc">Professional photography, cinematic video, and luxury campaign design that commands attention.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num-wrap">03</div>
+        <div class="process-title">Marketing</div>
+        <p class="process-desc">Strategic exposure across premium digital channels and our private buyer network of qualified purchasers.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num-wrap">04</div>
+        <div class="process-title">Closing</div>
+        <p class="process-desc">Expert negotiation, documentation, and end-to-end legal support until the keys change hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELLER TESTIMONIALS -->
+<section class="sell-testi">
+  <div class="sell-testi-inner">
+    <div class="sell-testi-header reveal">
+      <div class="section-eyebrow">Seller Stories</div>
+      <h2 class="section-heading">What Our Sellers <em>Say</em></h2>
+    </div>
+    <div class="sell-testi-grid">
+      <div class="sell-review-card reveal">
+        <div class="sell-review-stars">★★★★★</div>
+        <p class="sell-review-quote">"We listed with Walnut Estate after a disappointing year with another agency. Within 18 days, they found us the right buyer at a price that exceeded our expectations. Exceptional."</p>
+        <div class="sell-review-name">Rajesh &amp; Neha Gupta</div>
+        <div class="sell-review-role">Sellers · Gomti Nagar, Lucknow</div>
+      </div>
+      <div class="sell-review-card reveal d1">
+        <div class="sell-review-stars">★★★★★</div>
+        <p class="sell-review-quote">"The photography and marketing they did for our villa was extraordinary — it looked like it belonged in an architecture magazine. We received four offers in the first week."</p>
+        <div class="sell-review-name">Vikram Sinha</div>
+        <div class="sell-review-role">Seller · Indira Nagar, Lucknow</div>
+      </div>
+      <div class="sell-review-card reveal d2">
+        <div class="sell-review-stars">★★★★★</div>
+        <p class="sell-review-quote">"As an NRI selling my Lucknow property remotely, I needed a team I could completely trust. Walnut Estate handled everything — legally, financially, and professionally. Seamless."</p>
+        <div class="sell-review-name">Ananya Sharma</div>
+        <div class="sell-review-role">Seller · London / Lucknow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELL FORM -->
+<section class="sell-form-section" id="sell-form">
+  <div class="sell-form-inner">
+    <div class="sell-form-left reveal">
+      <div class="section-eyebrow" style="color:var(--cream-dk);">Get In Touch</div>
+      <h2 class="section-heading" style="color:var(--cream-lt);">Ready to list your<br><em>property</em>?</h2>
+      <p>Fill in the form and one of our senior advisors will be in touch within 24 hours to discuss your property and get the process started.</p>
+      <ul class="sell-form-contact-list">
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+          <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.5;margin-bottom:3px;">Call Us</div><a href="tel:+917234000088">+91 72340 00088</a></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg></div>
+          <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.5;margin-bottom:3px;">Email Us</div><a href="mailto:info@walnutestate.com">info@walnutestate.com</a></div>
+        </li>
+        <li>
+          <div class="contact-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.5;margin-bottom:3px;">Office</div><span>Gomti Nagar, Lucknow, UP 226010</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sell-form reveal d2">
+      <div class="form-heading">List Your Property</div>
+      <p class="form-subhead">Tell us about your property. No obligations — just a conversation.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" class="form-input" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number *</label>
+          <input type="tel" class="form-input" placeholder="+91 00000 00000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="you@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Property Type *</label>
+          <select class="form-select">
+            <option value="">Select type</option>
+            <option>Land / Plot</option>
+            <option>Independent House</option>
+            <option>Apartment / Flat</option>
+            <option>Villa</option>
+            <option>Penthouse</option>
+            <option>Farmhouse</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Expected Price</label>
+          <select class="form-select">
+            <option value="">Select range</option>
+            <option>Under ₹1 Crore</option>
+            <option>₹1 Cr – ₹3 Cr</option>
+            <option>₹3 Cr – ₹7 Cr</option>
+            <option>₹7 Cr – ₹15 Cr</option>
+            <option>₹15 Cr+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Property Location</label>
+        <input type="text" class="form-input" placeholder="Area, locality — e.g. Gomti Nagar, Lucknow">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tell Us More</label>
+        <textarea class="form-textarea" placeholder="Size, configuration, any unique features, current status…"></textarea>
+      </div>
+      <button class="form-submit" onclick="this.textContent='Request Received ✓'; this.style.background='#2e7d32';">Submit Listing Request</button>
+      <p class="form-note">We typically respond within 24 hours. All enquiries are handled with complete confidentiality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="cta-eyebrow">Don't Wait</div>
+    <h2 class="cta-heading">Every Day Matters<br>in <em>Real Estate</em></h2>
+    <p class="cta-sub">The right buyer for your property is out there. Let's find them together — with precision and care.</p>
+    <div class="cta-btns">
+      <a href="tel:7234000088" class="btn btn-primary">Call 72340 00088</a>
+      <a href="#sell-form" class="btn btn-outline-light">List Your Property</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <img src="main-logo.png" alt="Walnut Estate" class="footer-logo-img" />
+        <div class="footer-logo">Walnut Estate</div>
+      </div>
+      <p class="footer-tagline">The evolution of the estate</p>
+      <div class="footer-contact">
+        <a href="tel:7234000088"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>72340 00088</a>
+        <a href="mailto:info@walnutestate.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>info@walnutestate.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Sell</div>
+      <ul class="footer-links">
+        <li><a href="#sell-form">List Your Property</a></li>
+        <li><a href="#">Free Valuation</a></li>
+        <li><a href="#">Seller Guide</a></li>
+        <li><a href="#">Marketing Services</a></li>
+        <li><a href="#">NRI Sellers</a></li>
+        <li><a href="#">Success Stories</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Buy</div>
+      <ul class="footer-links">
+        <li><a href="buy.html">Browse Properties</a></li>
+        <li><a href="buy.html">Land &amp; Plots</a></li>
+        <li><a href="buy.html">Luxury Villas</a></li>
+        <li><a href="buy.html">Penthouses</a></li>
+        <li><a href="buy.html">Apartments</a></li>
+        <li><a href="buy.html">New Launches</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Walnut Estate. All Rights Reserved. RERA Reg. No. UP/RERA/2019/12345</div>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Cookie Settings</a></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
