@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Noir Collection favicon</title>
+  <defs>
+    <linearGradient id="circleGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#E6C565" />
+      <stop offset="100%" stop-color="#C49848" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="#000" />
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#circleGrad)" stroke-width="4" />
+  <text x="50%" y="55%" text-anchor="middle" fill="#FDF6E8" font-family="Georgia, serif" font-size="28" font-weight="700">N</text>
+</svg>
